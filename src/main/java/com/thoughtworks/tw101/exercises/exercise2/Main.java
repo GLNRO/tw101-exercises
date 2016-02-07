@@ -5,15 +5,11 @@ package com.thoughtworks.tw101.exercises.exercise2;
 
 public class Main {
     public static void main(String[] args) {
-        new Main();
-    }
-
-    public Main(){
         Accumulator accumulator = new Accumulator();
-        this.callFiveTimes(accumulator);
+        callFiveTimes(accumulator);
     }
 
-    public void callFiveTimes(Accumulator acc){
+    public static void callFiveTimes(Accumulator acc){
         for (int i=0;i<5;i++){
             acc.increment();
         }

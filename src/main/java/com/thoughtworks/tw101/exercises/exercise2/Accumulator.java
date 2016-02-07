@@ -4,12 +4,6 @@ public class Accumulator {
 
     private int totalCall = 0;
 
-
-    public static void main(String[] args){
-        Accumulator accumulator = new Accumulator();
-    }
-
-
     public void increment(){
         totalCall += 1;
     }
