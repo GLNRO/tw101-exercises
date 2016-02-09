@@ -11,5 +11,12 @@ package com.thoughtworks.tw101.exercises.exercise6;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("Hello");
+        Troll tDoll = new Troll(5);
+        tDoll.takeDamage(20);
+        tDoll.reportStatus();
+        tDoll.takeDamage(80);
+        tDoll.reportStatus();
+
     }
 }
