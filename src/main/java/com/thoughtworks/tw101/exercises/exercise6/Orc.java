@@ -9,7 +9,7 @@ public class Orc implements Monster {
     private int idNum;
     private String status = "alive";
 
-    public Troll(int id){
+    public Orc(int id){
         this.idNum = id;
     }
 
