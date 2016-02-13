@@ -12,50 +12,60 @@ import java.util.Scanner;
 // When the user inputs their guess, I want to catch any numformat exceptions and ask them to try again.
 // When the user inputs a number, I want to check that number until it is correct.
 // When a user submits a guess, I want it pushed to the guesses array
+// When a user guesses the right guess, the game should print out all their guesses
 
 public class Game {
 
-    private int randNum = (int) (Math.random()*5);
-    private ArrayList guesses = new ArrayList<Integer>();
+    private int randNum = (int) (Math.random()*100);
+    private ArrayList guesses = new ArrayList();
     private Scanner scanner = new Scanner(System.in);
     private int userGuess;
 
 
     public void start(){
-        System.out.println("Starting the game");
         getInput();
-        while (userGuess != randNum){
+        while (evaluateGuess(userGuess,randNum)){
             checkGuess();
             getInput();
         }
-        System.out.println("You guessed " + userGuess + " and the hidden number was " + randNum);
+        printResults();
     }
 
-    public void checkGuess(){
+    private boolean evaluateGuess (int userInput, int gameGuess){
+        return (userInput != gameGuess);
+    }
+
+    private void printResults(){
+        System.out.println("Correct! The chosen number was  " + randNum + ". Your guesses were: ");
+        for( Object guess : guesses) {
+            System.out.println(guess);
+        }
+    }
+
+    private void checkGuess(){
         if(userGuess > randNum){
             System.out.println("You guessed too high, try again");
         }
         else if( userGuess < randNum){
             System.out.println("You guessed too low");
         }
-
     }
 
-    public void getInput(){
+    private void getInput(){
         System.out.println("Pick a random number...");
         String stringGuess = scanner.nextLine();
         parseGuess(stringGuess);
     }
 
-    public void parseGuess(String input){
+    private void parseGuess(String input){
 
         try{
             userGuess = Integer.parseInt(input);
+            guesses.add(userGuess);
         }
         catch(NumberFormatException e){
             System.out.println("That's not a number, try again...");
             getInput();
         }
-
     }
 }
