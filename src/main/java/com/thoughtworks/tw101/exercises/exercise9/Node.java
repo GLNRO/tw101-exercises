@@ -14,19 +14,21 @@ public class Node {
     }
 
     public void add(String nameOfNewNode) {
-        if (nameOfNewNode.compareTo(this.name) < 0 ){
+        if (nameOfNewNode.compareTo(this.name) <= 0 ){
             if (leftChild == null) {
                 leftChild = new Node(nameOfNewNode);
             }
             else{
-                leftChild.add(nameOfNewNode)
+                leftChild.add(nameOfNewNode);
             }
         }
         else if(nameOfNewNode.compareTo(this.name) > 0){
-
-        }
-        else if(nameOfNewNode.compareTo(this.name) == 0){
-
+            if (rightChild == null){
+                rightChild = new Node(nameOfNewNode);
+            }
+            else{
+                rightChild.add(nameOfNewNode);
+            }
         }
 
     }
