@@ -23,5 +23,15 @@ public class Main {
         for (String name : names) {
             System.out.println(name);
         }
+
+//        System.out.println("Left child of Cecil: " + root.leftChild.name);
+//        System.out.println("Right child of Cecil: " + root.rightChild.name);
+//
+//        System.out.println("Right child of Cecil's Left Child Bill : " + root.leftChild.rightChild.name);
+//        System.out.println("Right child of Cecil's Right Child Michelle : " + root.rightChild.rightChild.name);
+//        System.out.println("Left child of Cecil's Right Child Michelle : " + root.rightChild.leftChild.name);
+//
+//        System.out.println("Left child of Cecil's Right Child's Right Child Tess : " + root.rightChild.rightChild.leftChild.name);
+//        System.out.println("Left child of Cecil's Right Child's Right Child's Left Child Sue : " + root.rightChild.rightChild.leftChild.leftChild.name);
     }
 }
